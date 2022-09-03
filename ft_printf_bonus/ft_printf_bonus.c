@@ -60,8 +60,9 @@ void ft_read_str(va_list args, char *str, int *no, int *count)
 	{
 		ft_print_str(str, &i, count);
 		i++;
-		// ft_find_flags(str, &i, count, args);
-		ft_print_args(str[i], count, args);
+		if (str[i])
+			ft_find_flags(str, &i, count, args);
+		//ft_print_args(str[i], count, args);
 		if (str[i] == '%')
 		{
 			ft_putchar_fd('%', 1);
@@ -90,6 +91,6 @@ int ft_printf(const char *str, ...)
 
 int main(void)
 {
-	// printf(" [%d]\n", ft_printf("%d nono %%%s l", 42, "42"));
-	printf(" [%d]\n", printf("%2.dnono %%%2.sl", 2, "4"));
+	printf(" [%d]\n", ft_printf("%10.4d nono", 42));
+	//printf(" [%d]\n", printf("%5.2dnono %%%-2sl", 2, "4"));
 }

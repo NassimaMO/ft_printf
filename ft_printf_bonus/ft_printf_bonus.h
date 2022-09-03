@@ -15,6 +15,7 @@
 
 #include "../libft/libft.h"
 
+void    ft_find_flags(char *str, int *i, int *count, va_list args);
 int ft_putnbr_base(long int nbr, char *base, int n, int *i);
 int ft_printf(const char *str, ...);
 
